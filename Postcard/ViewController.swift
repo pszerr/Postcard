@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mailButton: UIButton!
     
+    @IBOutlet weak var nameLabel: UILabel!
     
     
     
@@ -32,10 +33,18 @@ class ViewController: UIViewController {
 
     @IBAction func sendMailButtonPressed(sender: UIButton)
     {
-        // Adding Comment to test Git Commits
+        // set up messageLabel
         messageLabel.hidden = false
         messageLabel.text = enterMessageTextField.text
         messageLabel.textColor = UIColor.redColor()
+        
+        // Set up nameLabel
+        nameLabel.hidden = false
+        nameLabel.text = enterNameTextField.text
+        nameLabel.textColor = UIColor.blueColor()
+        
+        enterNameTextField.text = ""
+        
         
         enterMessageTextField.text = ""
         mailButton.setTitle("Mail Sent", forState: UIControlState.Normal)
